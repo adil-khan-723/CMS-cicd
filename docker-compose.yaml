@@ -1,0 +1,36 @@
+services:
+    frontend:
+        build: 
+            context: 
+                ./frontend/cms-frontend
+            dockerfile: 
+                Dockerfile_multi_stage
+        image: frontend
+        ports:
+            - 80:80
+        depends_on:
+              backend:
+                condition: service_healthy
+    backend:
+        build: 
+            context:
+                ./backend
+            dockerfile:
+                Dockerfile_multi_stage
+        image: backend
+        ports:
+            - 8000:8000
+        environment:
+            DJANGO_SUPERUSER_USERNAME: OGGY
+            DJANGO_SUPERUSER_EMAIL: oggy@example.com
+            DJANGO_SUPERUSER_PASSWORD: OGGY
+        healthcheck:
+            test: ["CMD", "curl", "-f", "http://localhost:8000/admin/login"]
+            interval: 5s
+            timeout: 5s
+            retries: 5
+            start_period: 10s
+        volumes:
+            - ./backend/data:/app/data
+
+

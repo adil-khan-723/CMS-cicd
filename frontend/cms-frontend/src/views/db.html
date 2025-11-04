@@ -1,0 +1,92 @@
+<html>
+ <head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+   @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+   .nav-item:hover {
+     color: #f97316 !important;
+   }
+   .nav-item.active {
+     color: #f97316 !important;
+   }
+  </style>
+  <script>
+   function setActive(element) {
+     // Remove active class from all elements
+     document.querySelectorAll('.nav-item').forEach(item => {
+       item.classList.remove('active');
+     });
+
+     // Add active class to the clicked element
+     element.classList.add('active');
+   }
+  </script>
+ </head>
+ <body class="bg-gray-100 h-screen flex">
+  <!-- Sidebar -->
+  <div class="w-64 bg-white shadow-md h-full flex flex-col justify-between">
+   <div>
+    <div class="flex items-center justify-between p-4 border-b">
+     <span class="text-2xl font-bold text-orange-500">blooog</span>
+    </div>
+    <div class="p-4">
+     <div class="flex items-center mb-4">
+      <span class="text-gray-700 font-semibold">
+       User Name
+      </span>
+     </div>
+     <button class="w-full bg-orange-500 text-white py-2 rounded-md mb-4 flex items-center justify-center hover:bg-orange-600 transition duration-300">
+      <i class="fas fa-plus mr-2">
+      </i>
+      NEW POST
+     </button>
+     <nav>
+      <ul>
+       <li class="mb-4 flex items-center text-gray-700 nav-item transition duration-300" onclick="setActive(this)">
+        <i class="fas fa-file-alt mr-2">
+        </i>
+        Posts
+       </li>
+       <li class="mb-4 flex items-center text-gray-700 nav-item transition duration-300" onclick="setActive(this)">
+        <i class="fas fa-folder mr-2">
+        </i>
+        Categories
+       </li>
+       <li class="mb-4 flex items-center text-gray-700 nav-item transition duration-300" onclick="setActive(this)">
+        <i class="fas fa-tasks mr-2">
+        </i>
+        Manage Posts
+       </li>
+       <li class="mb-4 flex items-center text-gray-700 nav-item transition duration-300" onclick="setActive(this)">
+        <i class="fas fa-paint-brush mr-2">
+        </i>
+        Theme
+       </li>
+      </ul>
+     </nav>
+    </div>
+   </div>
+   <div class="p-4">
+    <button class="w-full bg-orange-500 text-white py-2 rounded-md flex items-center justify-center hover:bg-orange-600 transition duration-300">
+     <i class="fas fa-sign-out-alt mr-2">
+     </i>
+     Logout
+    </button>
+   </div>
+  </div>
+  <!-- Main Content -->
+  <div class="flex-1 p-6">
+   <div class="flex items-center justify-center mb-6">
+    <div class="flex items-center bg-white p-2 rounded-md w-1/2 shadow-md border border-gray-300">
+     <i class="fas fa-search text-gray-500 mr-2">
+     </i>
+     <input class="focus:outline-none bg-white w-full" placeholder="Search posts" type="text"/>
+     <button class="text-gray-500 ml-2 focus:outline-none">
+      <i class="fas fa-times">
+      </i>
+     </button>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>

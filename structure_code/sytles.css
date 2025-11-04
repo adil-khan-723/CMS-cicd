@@ -1,0 +1,5 @@
+/* Custom CSS for active state */
+.active {
+    background-color: #E5E7EB; /* bg-gray-200 */
+    color: #4A5568; /* text-gray-700 */
+  }

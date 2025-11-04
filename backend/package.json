@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "vue-quill": "^1.5.1"
+  }
+}

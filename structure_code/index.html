@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMS Dashboard - OGGY COMPANY</title>
+  <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+  <div class="flex">
+    <!-- Sidebar -->
+    <div class="bg-purple-900 text-white w-64 min-h-screen flex flex-col">
+      <div class="p-4">
+        <div class="flex items-center">
+          <img alt="Company Logo" class="rounded-full" height="50" src="https://storage.googleapis.com/a1aa/image/XKXveLpxNxTimcYIC-e-qn1ILg6CVBykLyaV-dob4lQ.jpg" width="50">
+          <span class="ml-4 text-xl font-bold">OGGY COMPANY</span>
+        </div>
+      </div>
+      <nav class="flex-1 px-4">
+        <ul>
+          <li class="py-2">
+            <a class="sidebar-button flex items-center px-4 py-2 rounded-lg hover:bg-purple-700 transition duration-300" href="javascript:void(0);" onclick="setActive(this); showPage('dashboard')">
+              <i class="fas fa-tachometer-alt mr-2"></i>
+              Dashboard
+            </a>
+          </li>
+          <li class="py-2">
+            <a class="sidebar-button flex items-center px-4 py-2 rounded-lg hover:bg-purple-700 transition duration-300" href="javascript:void(0);" onclick="setActive(this); showPage('notifications')">
+              <i class="fas fa-bell mr-2"></i>
+              Notifications
+              <span class="ml-auto bg-blue-500 text-white rounded-full px-2">3</span>
+            </a>
+          </li>
+          <li class="py-2">
+            <a class="sidebar-button flex items-center px-4 py-2 rounded-lg hover:bg-purple-700 transition duration-300" href="javascript:void(0);" onclick="setActive(this); showPage('user-management')">
+              <i class="fas fa-users mr-2"></i>
+              User Management
+            </a>
+          </li>
+          <li class="py-2">
+            <a class="sidebar-button flex items-center px-4 py-2 rounded-lg hover:bg-purple-700 transition duration-300" href="javascript:void(0);" onclick="setActive(this); showPage('file-management')">
+              <i class="fas fa-file-alt mr-2"></i>
+              File Management
+            </a>
+          </li>
+          <li class="py-2">
+            <a class="sidebar-button flex items-center px-4 py-2 rounded-lg hover:bg-purple-700 transition duration-300" href="javascript:void(0);" onclick="setActive(this); showPage('blog-posts')">
+              <i class="fas fa-blog mr-2"></i>
+              Blog Posts
+            </a>
+          </li>
+          <li class="py-2">
+            <a class="sidebar-button flex items-center px-4 py-2 rounded-lg hover:bg-purple-700 transition duration-300" href="javascript:void(0);" onclick="setActive(this); showPage('page-creation')">
+              <i class="fas fa-file-alt mr-2"></i>
+              Page Creation
+            </a>
+          </li>
+          <li class="py-2">
+            <a class="sidebar-button flex items-center px-4 py-2 rounded-lg hover:bg-purple-700 transition duration-300" href="javascript:void(0);" onclick="setActive(this); showPage('settings')">
+              <i class="fas fa-cog mr-2"></i>
+              Settings
+            </a>
+          </li>
+          <li class="py-2">
+            <a class="sidebar-button flex items-center px-4 py-2 rounded-lg hover:bg-purple-700 transition duration-300" href="javascript:void(0);" onclick="setActive(this); showPage('configuration')">
+              <i class="fas fa-wrench mr-2"></i>
+              Configuration
+            </a>
+          </li>
+          <li class="py-2">
+            <a class="sidebar-button flex items-center px-4 py-2 rounded-lg hover:bg-purple-700 transition duration-300" href="javascript:void(0);" onclick="setActive(this); showPage('developer-mode')">
+              <i class="fas fa-code mr-2"></i>
+              Developer Mode
+            </a>
+          </li>
+          <li class="py-2">
+            <a class="sidebar-button flex items-center px-4 py-2 rounded-lg hover:bg-purple-700 transition duration-300" href="javascript:void(0);" onclick="setActive(this); showPage('documentation')">
+              <i class="fas fa-book mr-2"></i>
+              Documentation
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-6">
+      <div class="flex justify-between items-center mb-6">
+        <div class="flex space-x-4">
+          <a class="ribbon-button text-lg font-semibold border-b-2 border-purple-600 px-4 py-2 rounded-lg hover:bg-purple-100 transition duration-300" href="javascript:void(0);" onclick="setActive(this); showPage('overview')">
+            Overview
+          </a>
+          <a class="ribbon-button text-lg font-semibold px-4 py-2 rounded-lg hover:bg-purple-100 transition duration-300" href="javascript:void(0);" onclick="setActive(this); showPage('analytics')">
+            Analytics
+          </a>
+          <a class="ribbon-button text-lg font-semibold px-4 py-2 rounded-lg hover:bg-purple-100 transition duration-300" href="javascript:void(0);" onclick="setActive(this); showPage('latest-updates')">
+            Latest Updates
+          </a>
+          <a class="ribbon-button text-lg font-semibold px-4 py-2 rounded-lg hover:bg-purple-100 transition duration-300" href="javascript:void(0);" onclick="setActive(this); showPage('notifications')">
+            Notifications
+          </a>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div class="flex items-center space-x-2">
+            <span class="text-green-500">Online</span>
+            <i class="fas fa-circle text-green-500"></i>
+          </div>
+          <div class="flex items-center space-x-2">
+            <img alt="User Avatar" class="rounded-full" height="40" src="https://storage.googleapis.com/a1aa/image/Argb4skItJ68WAIOPWlPxXuCvEY2itCNX8ZMd4K4ULo.jpg" width="40">
+            <span>Username</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pages -->
+      <div id="dashboard" class="page">
+        <h1 class="text-2xl font-bold mb-4">Dashboard</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h2 class="text-gray-600">Total orders</h2>
+            <p class="text-4xl font-bold text-purple-600">5432 <i class="fas fa-arrow-down text-red-500"></i></p>
+            <p class="text-gray-500">Up 4.5% since last month</p>
+            <a class="text-blue-500" href="javascript:void(0);" onclick="setActive(this)">View all orders</a>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h2 class="text-gray-600">Total revenue</h2>
+            <p class="text-4xl font-bold text-purple-600">£250,000 <i class="fas fa-arrow-up text-green-500"></i></p>
+            <p class="text-gray-500">Up 4.5% since last month</p>
+            <a class="text-blue-500" href="javascript:void(0);" onclick="setActive(this)">View all stats</a>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h2 class="text-gray-600">Activity</h2>
+            <p class="text-4xl font-bold text-purple-600">30 Days</p>
+            <div class="relative pt-1">
+              <div class="flex mb-2 items-center justify-between">
+                <div>
+                  <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-purple-600 bg-purple-200">Reports</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs font-semibold inline-block text-purple-600">85%</span>
+                </div>
+              </div>
+              <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-purple-200">
+                <div class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-600" style="width:85%"></div>
+              </div>
+            </div>
+            <a class="text-blue-500" href="javascript:void(0);" onclick="setActive(this)">View all data</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other pages (Notifications, User Management, etc.) go here -->
+      <div id="notifications" class="page hidden">
+        <h1 class="text-2xl font-bold mb-4">Notifications</h1>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h2 class="text-gray-600">Notifications</h2>
+          <div class="mt-4">
+            <div class="bg-red-100 p-4 rounded-lg mb-4">
+              <p class="text-red-600 font-bold">HIGH</p>
+              <p>Contact User: 2345 regarding issue with refund not sent.</p>
+              <a class="text-blue-500" href="javascript:void(0);" onclick="setActive(this)">View ticket</a>
+            </div>
+            <div class="bg-green-100 p-4 rounded-lg">
+              <p class="text-green-600 font-bold">LOW</p>
+              <p>Contact User: 2345 Updating personal details as save button not working in settings.</p>
+              <a class="text-blue-500" href="javascript:void(0);" onclick="setActive(this)">View ticket</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add other pages (User Management, File Management, etc.) similarly -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

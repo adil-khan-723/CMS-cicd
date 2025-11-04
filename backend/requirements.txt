@@ -1,0 +1,15 @@
+asgiref==3.8.1
+Django==5.1.7
+django-cors-headers==4.7.0
+django-debug-toolbar==5.0.1
+djangorestframework==3.15.2
+psycopg2-binary==2.9.10
+pymongo==3.11.4
+pytz==2025.1
+sqlparse==0.5.3
+tzdata==2025.1
+djangorestframework-simplejwt==5.3.1
+django-allauth==0.63.3
+dj-rest-auth==7.0.1
+django-extensions==3.2.3
+requests==2.32.3
