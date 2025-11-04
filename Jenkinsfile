@@ -55,5 +55,37 @@ pipeline {
             }
         }
 
+        stage("deploy to ec2"){
+            steps {
+                sshagent(credentials: ['cms_deploy']){
+                    sh "ssh -o StrictHostKeyChecking=no ubuntu@${SERVER_IP}"
+                    echo "remote connection success ..."
+                    sh """
+                        if [-d ${DIR} ]; then
+                            echo 'pulling the changes'
+                            cd ${DIR} 
+                            git pull
+                        else 
+                            echo 'cloning the repo'
+                            git clone https://github.com/adil-khan-723/CMS-cicd.git
+                        fi 
+                    """
+                    sh "docker system prune -af --volumes"
+                    sh "cd ${DIR}"
+                    sh "docker compose down"
+                    sh "docker compose up --build"
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "deploy success"
+        }
+
+        failure {
+            echo "deploy failure"
+        }
     }
 }
