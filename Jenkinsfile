@@ -2,13 +2,13 @@ pipeline {
     agent any 
 
     triggers {
-        githubPush()
+        pollSCM('* * * * *')
     }
     environment {
         DIR = '/home/ubuntu/CMD-cicd'
         SERVER_IP = '13.232.164.183'
-        FRONTEND = 'CMS_FRONTEND'
-        BACKEND = 'CMS_BACKEND'
+        FRONTEND = 'cms_frontend'
+        BACKEND = 'cms_backend'
         DOCKERHUB = credentials('DockerHub')
     }
     stages {
