@@ -25,7 +25,7 @@ pipeline {
             steps {
                 sh """ 
                     cd /var/lib/jenkins/workspace/CMS/frontend/cms-frontend
-                    docker build -t ${FRONTEND} -f Dockerfile_mullti_stage .
+                    docker build -t ${FRONTEND} -f Dockerfile_multi_stage .
                     echo 'Frontend build successful'
                 """
             }
