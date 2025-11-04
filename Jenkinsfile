@@ -5,7 +5,7 @@ pipeline {
         pollSCM('* * * * *')
     }
     environment {
-        DIR = '/home/ubuntu/CMD-cicd'
+        DIR = '/home/ubuntu/CMS-cicd'
         SERVER_IP = '13.232.164.183'
         FRONTEND = 'cms_frontend'
         BACKEND = 'cms_backend'
