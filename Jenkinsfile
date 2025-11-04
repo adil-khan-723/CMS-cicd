@@ -70,7 +70,7 @@ pipeline {
                         docker system prune -af --volumes
                         cd ${DIR}
                         docker compose down
-                        docker compose up --build
+                        docker compose up --build -d
                         '
                     """
                 }
