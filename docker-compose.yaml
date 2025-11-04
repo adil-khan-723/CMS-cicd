@@ -16,7 +16,7 @@ services:
             context:
                 ./backend
             dockerfile:
-                Dockerfile_multi_stage
+                Dockerfile_cicd
         image: backend
         ports:
             - 8000:8000
