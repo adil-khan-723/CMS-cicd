@@ -34,7 +34,7 @@ pipeline {
         stage("backend build") {
             steps {
                 sh """
-                    cd ${DIR}/backend
+                    cd /var/lib/jenkins/workspace/CMS/backend
                     docker build -t ${BACKEND} -f Dockerfile_cicd .
                     echo 'Backend build successful'
                 """
