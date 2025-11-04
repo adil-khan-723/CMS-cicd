@@ -67,10 +67,10 @@ pipeline {
                             echo 'cloning the repo'
                             git clone https://github.com/adil-khan-723/CMS-cicd.git
                         fi 
-                        sh "docker system prune -af --volumes"
-                        sh "cd ${DIR}"
-                        sh "docker compose down"
-                        sh "docker compose up --build"
+                        docker system prune -af --volumes
+                        cd ${DIR}
+                        docker compose down
+                        docker compose up --build
                         '
                     """
                 }
