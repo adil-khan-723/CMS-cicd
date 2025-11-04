@@ -61,7 +61,7 @@ pipeline {
                     sh "ssh -o StrictHostKeyChecking=no ubuntu@${SERVER_IP}"
                     echo "remote connection success ..."
                     sh """
-                        if [-d ${DIR} ]; then
+                        if [ -d ${DIR} ]; then
                             echo 'pulling the changes'
                             cd ${DIR} 
                             git pull
